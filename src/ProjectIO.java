@@ -20,7 +20,11 @@ public class ProjectIO extends PokemonGame{
 		name = input.next();
 		PokemonGame.waiting.name = name;
 		System.out.println("Welcome "+name+"!");
-		
+		//allow hand to be created for each player, class hand. hand player1 = new hand hand; player 2 = new hand 
+		 // 6 cards added, cards should move on their own when the game has started		
+				//when hand player.playing created, cards move 
+		//player.playing owns deck 1, when switched the player.playing owns deck 2
+		//playing looks @ hand* 
 		
 	}
 	public static void changeTurn(){
