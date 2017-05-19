@@ -1,11 +1,10 @@
+package Pokemon;
 import java.util.Scanner;
 
 public class ProjectIO extends PokemonGame{
 	public static void turnEngine(){
 		System.out.println("Hello, and welcome to Pokemon");
 		makePlayers();
-		
-		
 	}
 	public static void makePlayers(){
 		//player 1
