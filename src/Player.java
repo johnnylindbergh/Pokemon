@@ -1,6 +1,7 @@
 
 public class Player extends PokemonGame{
-	static String name = "";
+	 static String name = "";
 	public static void player(String username){
+		name = username;
 	}
 }
