@@ -3,7 +3,7 @@ public class Card extends PokemonGame {
 	static Type type;
 	public static void pokemonConstructor(){
 		type = Type.POKEMON;
-		//changes
+		//change
 	}
 	public static void trainingConstructor(){
 		type = Type.TRAINER;
