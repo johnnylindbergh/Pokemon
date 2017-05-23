@@ -30,3 +30,12 @@ public class ProjectIO extends PokemonGame{
 
 	}
 }
+
+//this needs to be able handle these commands 
+//print field:prints all Pokemon in both players’ fields, and their HP (status)
+//print hand:prints only your hand, and the number of cards left in each player’s deck
+//attack:the Pokemon in your arena position attacks,ending your turn
+//switch [NUMBER]: switches your arena position Pokemon with the Pokemon in the indicated spot in the bench. If that spot is empty, the Pokemon in the arena position just goes to that spot in the bench.
+//play [NUMBER]:chooses a card from your hand to play. If it is a Pokemon card,it is put in the bench (if there is no room, it is discarded); if it’s a Trainer card, its effect is carried out.
+//pass:endsyourturn
+
