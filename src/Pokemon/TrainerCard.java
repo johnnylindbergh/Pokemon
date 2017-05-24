@@ -1,14 +1,18 @@
 package Pokemon;
 import java.util.Scanner;
 
-public class TrainerCard extends Card{
+abstract public class TrainerCard extends Card{
 // potion, HP UP, Help From Mom, Evolution Stone
 	
 	public enum CardName{POTION, HP_UP, HELP_FROM_MOM, EVOLUTION_STONE};
-	static CardName name;
+	CardName name;
+	public TrainerCard(CardName type) {
+		this.name = type;
+	}
+
 	
-	public static void execute(){
-		Scanner input = new Scanner(System.in); 
+	public static void execute(Player playing, Player waiting){
+	/*	Scanner input = new Scanner(System.in); 
 		if(name.equals(CardName.POTION)){
 			System.out.println("Which Pokemon would you like to heal?");
 			// use 'input' to select a pokemon
@@ -24,7 +28,7 @@ public class TrainerCard extends Card{
 		if(name.equals(CardName.HELP_FROM_MOM)){
 			
 		}
-
+*/
 	}
 	
 }
