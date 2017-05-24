@@ -2,13 +2,13 @@ package Pokemon;
 import java.util.Scanner;
 
 public class ProjectIO {
-	public static Player playing = new Player();
-	public static Player waiting = new Player();
+	public static Player playing;
+	public static Player waiting;
 	
 	public static void main(String[] args) {
 		turnEngine();
-		attack();
 	}
+	
 	public static int commandValueParse(String s){
 		return Integer.parseInt(s);
 	}
@@ -16,12 +16,11 @@ public class ProjectIO {
 		return s;
 	}
 	
-	public static void attack(){
-		System.out.println(playing.name + " attacked " + waiting.name);
-	}
+	
 	public static void turnEngine(){
 		System.out.println("Hello, and welcome to Pokemon");
 		makePlayers();
+		System.out.println(playing);
 	}
 
 	public static void makePlayers(){
@@ -30,17 +29,17 @@ public class ProjectIO {
 		String name = "";
 		System.out.println("Player 1, please enter your name");
 		name = input.next();
-		playing.Player(name);
+		playing = new Player(name);
 		System.out.println("Welcome "+name+"!");
 		//player 2
 		System.out.println("Player 2, please enter your name");
 		name = input.next();
-		waiting.Player(name);
+		waiting = new Player(name);
 		System.out.println("Welcome "+name+"!");
-		
+		input.close();
 	}
 	public static void changeTurn(){
-		Player temp = new Player();
+		Player temp;
 		temp = waiting;
 		waiting = playing;
 		playing = temp;
