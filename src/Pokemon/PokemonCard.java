@@ -5,10 +5,8 @@ public class PokemonCard extends Card{
 	protected int xp = 0;
 	protected int attack = 0;
 	 
-	public void pokemonConstructor(int hp, int xp){
+	public void pokemonConstructor(String name, int hp, int maxhp, int xp){
 		this.hp = hp;
-		
-		
 	}
 	
 	public void superEffective(){
