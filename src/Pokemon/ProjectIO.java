@@ -24,12 +24,13 @@ public class ProjectIO {
 		System.out.println(playing);
 		//explain game and commands
 		Scanner input = new Scanner(System.in);
-		String command;
+		String command = "";
 		System.out.println(playing.name);
+		
 		command = input.next();
-		System.out.println(playing.name +" "+ command + "ed " );
+		System.out.println(playing.name +" "+ command + "ed " + waiting.name);
 		//playing.hand[2].execute(playing,waiting);
-		turnEngine();
+		//turnEngine();
 	}
 
 	public static void makePlayers(){
@@ -45,7 +46,6 @@ public class ProjectIO {
 		name = input.next();
 		waiting = new Player(name);
 		System.out.println("Welcome "+name+"!");
-		input.close();
 	}
 	public static void changeTurn(){
 		Player temp;
