@@ -6,6 +6,9 @@ public class ProjectIO extends PokemonGame{
 		System.out.println("Hello, and welcome to Pokemon");
 		makePlayers();
 	}
+	public void attack(){
+		playing.attackPosition.attack();
+	}
 	public static void makePlayers(){
 		//player 1
 		Scanner input = new Scanner(System.in);

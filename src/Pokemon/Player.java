@@ -13,4 +13,6 @@ public class Player extends PokemonGame{
 	public static void player(String username){
 		name = username;
 	}
+	
+	
 }
