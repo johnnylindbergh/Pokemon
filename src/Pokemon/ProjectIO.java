@@ -2,12 +2,18 @@ package Pokemon;
 import java.util.Scanner;
 
 public class ProjectIO {
-	protected static Player playing = new Player();
-	protected static Player waiting = new Player();
+	public static Player playing = new Player();
+	public static Player waiting = new Player();
 	
 	public static void main(String[] args) {
 		turnEngine();
 		attack();
+	}
+	public static int commandValueParse(String s){
+		return Integer.parseInt(s);
+	}
+	public static String commandParse(String s){
+		return s;
 	}
 	
 	public static void attack(){
@@ -24,12 +30,12 @@ public class ProjectIO {
 		String name = "";
 		System.out.println("Player 1, please enter your name");
 		name = input.next();
-		playing.name = name;
+		playing.Player(name);
 		System.out.println("Welcome "+name+"!");
 		//player 2
 		System.out.println("Player 2, please enter your name");
 		name = input.next();
-		waiting.name = name;
+		waiting.Player(name);
 		System.out.println("Welcome "+name+"!");
 		
 	}
