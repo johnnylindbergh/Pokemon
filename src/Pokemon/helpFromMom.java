@@ -5,3 +5,4 @@ public class helpFromMom extends TrainerCard{
 		super(CardName.HELP_FROM_MOM);
 	}
 }
+ 

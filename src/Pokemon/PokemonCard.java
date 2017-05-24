@@ -24,4 +24,4 @@ abstract public class PokemonCard extends Card{
 	return false;
 	}
 	
-}
+} 

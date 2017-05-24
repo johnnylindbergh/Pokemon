@@ -5,3 +5,4 @@ public class Potion extends TrainerCard {
 		super(CardName.POTION);
 	}
 }
+ 
