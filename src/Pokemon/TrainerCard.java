@@ -11,14 +11,26 @@ abstract public class TrainerCard extends Card{
 	}
 
 	
-	public static void execute(Player playing, Player waiting){
-	/*	Scanner input = new Scanner(System.in); 
+	public void execute(Player playing, Player waiting){
+		
+		/*Scanner input = new Scanner(System.in); 
+		 * if (this.name == Type.EVOLUTION_STONE){
+		 * 	print : which pokemon do you want to evolve?
+		 * init integer i
+		 * get response and set int i to it  
+		 * locate pokemon and call its evolve function 
+		 * }
+		 */
+	
+	 
 		if(name.equals(CardName.POTION)){
 			System.out.println("Which Pokemon would you like to heal?");
-			// use 'input' to select a pokemon
 			// pokemon.hp += 20;
-			//pokemon.bench[3]   ????
+			int i = ProjectIO.input.nextInt();
+			 playing.bench[i].hp +=20;
 		}
+		
+		/*
 		if(name.equals(CardName.HP_UP)){
 			System.out.println("Which Pokemon would you like to boost?");
 			// use 'input' to select a pokemon

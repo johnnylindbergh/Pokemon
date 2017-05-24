@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ProjectIO {
 	public static Player playing;
 	public static Player waiting;
+	public static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		turnEngine();
@@ -21,11 +22,12 @@ public class ProjectIO {
 		System.out.println("Hello, and welcome to Pokemon");
 		makePlayers();
 		System.out.println(playing);
+		((TrainerCard) playing.JP).execute(playing, waiting);
 	}
 
 	public static void makePlayers(){
 		//player 1
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		String name = "";
 		System.out.println("Player 1, please enter your name");
 		name = input.next();
@@ -36,7 +38,7 @@ public class ProjectIO {
 		name = input.next();
 		waiting = new Player(name);
 		System.out.println("Welcome "+name+"!");
-		input.close();
+		//input.close();
 	}
 	public static void changeTurn(){
 		Player temp;
