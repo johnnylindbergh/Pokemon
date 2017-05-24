@@ -7,6 +7,8 @@ public class ProjectIO {
 	public static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) {
+		System.out.println("Hello, and welcome to Pokemon");
+		makePlayers();
 		turnEngine();
 	}
 	
@@ -19,10 +21,19 @@ public class ProjectIO {
 	
 	
 	public static void turnEngine(){
-		System.out.println("Hello, and welcome to Pokemon");
-		makePlayers();
+		
 		System.out.println(playing);
 		((TrainerCard) playing.JP).execute(playing, waiting);
+
+		//explain game and commands
+		String command = "";
+		System.out.println(playing.name);
+		
+		command = input.next();
+		System.out.println(playing.name +" "+ command + "ed " + waiting.name);
+		//playing.hand[2].execute(playing,waiting);
+		//turnEngine();
+
 	}
 
 	public static void makePlayers(){
@@ -38,7 +49,7 @@ public class ProjectIO {
 		name = input.next();
 		waiting = new Player(name);
 		System.out.println("Welcome "+name+"!");
-		//input.close();
+
 	}
 	public static void changeTurn(){
 		Player temp;
@@ -47,6 +58,7 @@ public class ProjectIO {
 		playing = temp;
 
 	}
+	//EXAMPLE
 }
 
 //this needs to be able handle these commands 
