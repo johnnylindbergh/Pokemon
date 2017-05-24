@@ -1,5 +1,5 @@
 package Pokemon;
-public class PokemonCard extends Card{
+abstract public class PokemonCard extends Card{
 	protected int hp = 0;
 	protected int maxhp = 0;
 	protected int xp = 0;
