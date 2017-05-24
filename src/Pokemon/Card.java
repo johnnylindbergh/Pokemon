@@ -1,4 +1,4 @@
 package Pokemon;
-public class Card extends PokemonGame {
+public class Card extends ProjectIO {
 
 }
