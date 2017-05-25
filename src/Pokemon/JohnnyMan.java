@@ -3,7 +3,7 @@ package Pokemon;
 public class JohnnyMan extends PokemonCard {
 	
 public JohnnyMan(){
-	super("JohnnyMan",100,100,100,100,100,100);
+	super("JohnnyMan","null","null",100,100,100,100,100,100);
 	//
 }
 }
