@@ -19,7 +19,6 @@ public class ProjectIO {
 		return s;
 	}
 	
-	
 	public static void turnEngine(){
 		
 		System.out.println(playing);
@@ -27,8 +26,7 @@ public class ProjectIO {
 
 		//explain game and commands
 		String command = "";
-		System.out.println(playing.name);
-		
+		System.out.println(playing.name);		
 		command = input.next();
 		System.out.println(playing.name +" "+ command + "ed " + waiting.name);
 		//playing.hand[2].execute(playing,waiting);
