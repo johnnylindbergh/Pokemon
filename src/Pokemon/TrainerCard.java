@@ -27,9 +27,17 @@ abstract public class TrainerCard extends Card{
 			System.out.println("Which Pokemon would you like to heal?");
 			// pokemon.hp += 20;
 			int i = ProjectIO.input.nextInt();
-			 playing.bench[i].hp +=20;
+			playing.bench[i].hp +=20;
+			// what about a feature that says something like "(Pokemon Name" was healed!"
 		}
 		
+		if(name.equals(CardName.HP_UP)){
+			System.out.println("Which Pokemon would you like to boost?");
+			// I guess we need to provide input options, right?
+			int i = ProjectIO.input.nextInt();
+			playing.bench[i].hp +=20;
+			playing.bench[i].maxhp +=20;
+		}
 		/*
 		if(name.equals(CardName.HP_UP)){
 			System.out.println("Which Pokemon would you like to boost?");
