@@ -1,5 +1,6 @@
 package Pokemon;
 import java.util.Scanner;
+import java.io.*;
 
 public class ProjectIO {
 	public static Player playing;
@@ -9,8 +10,49 @@ public class ProjectIO {
 	public static void main(String[] args) {
 		System.out.println("Hello, and welcome to Pokemon");
 		makePlayers();
+		loadDeck("deck1.txt", playing);
+		loadDeck("deck2.txt", waiting);
+		System.out.println(((PokemonCard)playing.hand.get(1)).hp);
 		turnEngine();
+		
 	}
+	public static void makePokemon(String name, Player playing){
+		if (name.equals("JohnnyMan")){
+			Card pokemon = new JohnnyMan();
+			playing.hand.add(pokemon);
+		}
+		
+		if (name.equals("JackMan")){
+			Card pokemon = new JackMan();
+			playing.hand.add(pokemon);
+		}
+	}
+	
+	public static void loadDeck(String deck, Player playing){
+		String line = null;
+		try {
+			FileReader fileReader = new FileReader(deck);
+			BufferedReader bufferedReader =  new BufferedReader(fileReader);
+
+			while((line = bufferedReader.readLine()) != null) {
+				makePokemon(line,playing);
+			}
+				bufferedReader.close();
+			}
+		
+		catch(FileNotFoundException ex) {
+			System.out.println(
+					"Unable to open deck '" + 
+							deck + "'");
+		}
+		catch(IOException ex) {
+			System.out.println(
+					"Error reading file '" 
+							+ deck + "'");
+		
+		}
+	}
+		
 	
 	public static int commandValueParse(String s){
 		return Integer.parseInt(s);
@@ -21,17 +63,14 @@ public class ProjectIO {
 	
 	public static void turnEngine(){
 		
-		System.out.println(playing);
-		((TrainerCard) playing.JP).execute(playing, waiting);
+		//((TrainerCard) playing.JP).execute(playing, waiting);
 
 		//explain game and commands
 		String command = "";
-		System.out.println(playing.name);		
 		command = input.next();
 		System.out.println(playing.name +" "+ command + "ed " + waiting.name);
 		//playing.hand[2].execute(playing,waiting);
 		//turnEngine();
-
 	}
 
 	public static void makePlayers(){

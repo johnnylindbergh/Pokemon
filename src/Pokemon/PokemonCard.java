@@ -13,7 +13,6 @@ abstract public class PokemonCard extends Card{
 		this.xp = xp;
 		this.attack = attack;
 		this.evolveHp = evolveHp;
-		
 	}
 	
 	public void superEffective(){
