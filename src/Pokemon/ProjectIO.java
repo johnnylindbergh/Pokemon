@@ -12,19 +12,40 @@ public class ProjectIO {
 		makePlayers();
 		loadDeck("deck1.txt", playing);
 		loadDeck("deck2.txt", waiting);
+		System.out.println(playing.hand);
+
 		System.out.println(((PokemonCard)playing.hand.get(1)).hp);
+		printField(playing);
 		turnEngine();
 		
 	}
+	
+	public static void printField(Player playing){
+		for (int i = 0; i<playing.hand.size();i++){
+			System.out.print("["+i+"] ");
+			if (playing.hand.get(i).isPokemonCard){
+				((PokemonCard) playing.hand.get(i)).print();
+			}
+			if (!playing.hand.get(i).isPokemonCard){
+				((TrainerCard) playing.hand.get(i)).print();
+			}
+		}
+		
+	}
+	
 	public static void makePokemon(String name, Player playing){
 		if (name.equals("JohnnyMan")){
-			Card pokemon = new JohnnyMan();
-			playing.hand.add(pokemon);
+			Card c = new JohnnyMan();
+			playing.hand.add(c);
 		}
 		
 		if (name.equals("JackMan")){
-			Card pokemon = new JackMan();
-			playing.hand.add(pokemon);
+			Card c = new JackMan();
+			playing.hand.add(c);
+		}
+		if (name.equals("Potion")){
+			Card c = new Potion();
+			playing.hand.add(c);
 		}
 	}
 	

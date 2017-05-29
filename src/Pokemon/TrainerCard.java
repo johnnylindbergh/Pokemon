@@ -5,11 +5,19 @@ abstract public class TrainerCard extends Card{
 // potion, HP UP, Help From Mom, Evolution Stone
 	
 	public enum CardName{POTION, HP_UP, HELP_FROM_MOM, EVOLUTION_STONE};
-	CardName name;
+	CardName nameEnum;
+	String name;
+	
 	public TrainerCard(CardName type) {
-		this.name = type;
+		cardType(false);
+		this.nameEnum = type;
+		this.name = type.name();
+		
 	}
 
+	 public void print(){
+		 System.out.println("Name: "+this.name); 	 
+	 }
 	
 	public void execute(Player playing, Player waiting){
 		
@@ -23,7 +31,7 @@ abstract public class TrainerCard extends Card{
 		 */
 	
 	 
-		if(name.equals(CardName.POTION)){
+		if(nameEnum.equals(CardName.POTION)){
 			System.out.println("Which Pokemon would you like to heal?");
 			// pokemon.hp += 20;
 			int i = ProjectIO.input.nextInt();
@@ -31,7 +39,7 @@ abstract public class TrainerCard extends Card{
 			// what about a feature that says something like "(Pokemon Name" was healed!"
 		}
 		
-		if(name.equals(CardName.HP_UP)){
+		if(nameEnum.equals(CardName.HP_UP)){
 			System.out.println("Which Pokemon would you like to boost?");
 			// I guess we need to provide input options, right?
 			int i = ProjectIO.input.nextInt();
