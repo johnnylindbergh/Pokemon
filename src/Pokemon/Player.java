@@ -28,7 +28,7 @@ public class Player extends ProjectIO{
 					bench[i] =(PokemonCard)temp;
 					break;
 				}
-				System.out.print("Bench is full, you just wasted a card you");
+				System.out.print("Bench is full, you just wasted a cards");
 			}
 		}
 	}
