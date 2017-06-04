@@ -12,26 +12,42 @@ public class ProjectIO {
 		makePlayers();
 		loadDeck("deck1.txt", playing);
 		loadDeck("deck2.txt", waiting);
-		System.out.println(playing.hand);
-
-		System.out.println(((PokemonCard)playing.hand.get(1)).hp);
-		printField(playing);
+		playing.switchPokemon(2);
+		playing.play(1);
+		printField(playing,waiting);
 		turnEngine();
+		
+		printHand(playing);
+		printField(playing,waiting);
 		
 	}
 	
-	public static void printField(Player playing){
-		for (int i = 0; i<playing.hand.size();i++){
-			System.out.print("["+i+"] ");
-			if (playing.hand.get(i).isPokemonCard){
-				((PokemonCard) playing.hand.get(i)).print();
-			}
-			if (!playing.hand.get(i).isPokemonCard){
-				((TrainerCard) playing.hand.get(i)).print();
-			}
+	public static void printField(Player playing, Player waiting){
+		if(playing.attackPosition != null){
+			System.out.println(playing.name + " has a " + ((PokemonCard)playing.attackPosition).name);
+		}else{
+			System.out.println(playing.name+"'s field is empty");
 		}
 		
+		if(waiting.attackPosition != null){
+			System.out.println(waiting.name + " has a " + ((PokemonCard)waiting.attackPosition).name);
+		}else{
+			System.out.println(waiting.name+"'s field is empty");
+		}
 	}
+	
+	public static void printHand(Player playing){
+			for (int i = 0; i<=playing.hand.size()-1;i++){
+				System.out.print("["+i+"] ");
+				if (playing.hand.get(i).isPokemonCard){
+					((PokemonCard) playing.hand.get(i)).print();
+				}
+				if (!playing.hand.get(i).isPokemonCard){
+					((TrainerCard) playing.hand.get(i)).print();
+				}
+			}
+		}
+
 	
 	public static void makePokemon(String name, Player playing){
 		if (name.equals("JohnnyMan")){
@@ -75,23 +91,31 @@ public class ProjectIO {
 	}
 		
 	
-	public static int commandValueParse(String s){
-		return Integer.parseInt(s);
-	}
-	public static String commandParse(String s){
-		return s;
-	}
-	
+
 	public static void turnEngine(){
 		
 		//((TrainerCard) playing.JP).execute(playing, waiting);
 
 		//explain game and commands
-		String command = "";
-		command = input.next();
-		System.out.println(playing.name +" "+ command + "ed " + waiting.name);
-		//playing.hand[2].execute(playing,waiting);
-		//turnEngine();
+		String command = input.next();
+		
+	
+		if (command.equals("switch")){
+			
+			int val = Integer.parseInt(input.next());
+			playing.switchPokemon(val);
+			System.out.println("Moving "+val+ " to "+playing.name+"'s attack position");
+		}
+		if (command.equals("play")){
+			int val = Integer.parseInt(input.next());
+			playing.play(val);
+			System.out.println("playing "+val+ " to "+playing.name+"'s attack position");
+		}
+		printHand(playing);
+		printField(playing,waiting);
+		//System.out.println(playing.name +" "+ command + "ed " + waiting.name);
+//		playing.hand[2].execute(playing,waiting);
+		turnEngine();
 	}
 
 	public static void makePlayers(){

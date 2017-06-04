@@ -1,5 +1,4 @@
 package Pokemon;
-import java.util.Scanner;
 
 abstract public class TrainerCard extends Card{
 // potion, HP UP, Help From Mom, Evolution Stone
