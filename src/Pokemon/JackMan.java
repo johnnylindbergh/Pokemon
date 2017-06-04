@@ -1,6 +1,7 @@
 package Pokemon;
 
 public class JackMan extends PokemonCard {
+
 public JackMan(){
 	super("JackMan","name2","name3",100,100,100,100,100,100);
 	//super("name", hp, maxhp, xp, attack, evolveHp, evolveAttack);
