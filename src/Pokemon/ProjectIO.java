@@ -21,7 +21,7 @@ public class ProjectIO {
 		printField(playing,waiting);
 		
 	}
-	
+	 
 	public static void printField(Player playing, Player waiting){
 		if(playing.attackPosition != null){
 			System.out.println(playing.name + " has a " + ((PokemonCard)playing.attackPosition).name);

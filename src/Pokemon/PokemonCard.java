@@ -7,7 +7,7 @@ abstract public class PokemonCard extends Card{
 	protected int attack = 0;
 	protected int evolveHp = 0;
 	protected int evolveAttack = 0;
-	
+
 	 
 	 public PokemonCard(String name, String name1, String name2, int hp, int maxhp, int xp,int attack,int evolveHp, int evolveAttack){
 		 cardType(true);

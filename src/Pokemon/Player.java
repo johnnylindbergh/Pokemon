@@ -2,7 +2,7 @@ package Pokemon;
 import java.util.ArrayList;
 
 public class Player extends ProjectIO{
-	
+
 	protected String name = "";
 	protected Card attackPosition = null;
 	protected PokemonCard[] bench = new PokemonCard[6]; 
