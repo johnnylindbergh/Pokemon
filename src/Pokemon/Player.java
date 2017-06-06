@@ -23,12 +23,15 @@ public class Player extends ProjectIO{
 		Card temp = hand.get(position);
 		if(temp.isPokemonCard){
 			hand.remove(position);
-			for (int i = 0; i>bench.length-1;i++){
-				if (bench[i]==null){
-					bench[i] =(PokemonCard)temp;
+			for (int i = 0; i<bench.length-1;i++){
+				System.out.print(i);
+				if ((PokemonCard)bench[i] == null){
+					System.out.print("Found an empty bench position");
+					bench[i] = (PokemonCard)temp;
+					System.out.print(bench[i]);
 					break;
 				}
-				System.out.print("Bench is full, you just wasted a cards");
+				System.out.print("Bench is full, you just wasted a card");
 			}
 		}
 	}

@@ -34,10 +34,13 @@ public class ProjectIO {
 		}else{
 			System.out.println(waiting.name+"'s field is empty");
 		}
+		for (int i = 0; i<playing.bench.length;i++){
+			System.out.println(playing.bench[i]);
+		}
 	}
 	
 	public static void printHand(Player playing){
-			for (int i = 0; i<=playing.hand.size()-1;i++){
+			for (int i = 0; i<=playing.hand.size();i++){
 				System.out.print("["+i+"] ");
 				if (playing.hand.get(i).isPokemonCard){
 					((PokemonCard) playing.hand.get(i)).print();

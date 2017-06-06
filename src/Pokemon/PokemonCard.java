@@ -22,6 +22,12 @@ abstract public class PokemonCard extends Card{
 			 System.out.println(("Name: "+this.name+ " HP: "+this.hp+" Max HP: "+this.maxhp+" XP: "+this.xp+" Attack: "+this.attack));
 			 
 	 }
+	 public void evolve(){
+		 this.hp+=this.evolveHp;
+		// this.xp+=
+		 
+	 }
+	 
 	public void superEffective(){
 		this.hp -= 20;
 		
